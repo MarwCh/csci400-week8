@@ -39,29 +39,24 @@ List<Item> items = [
 ];
 
 
-class ShowSelectedItems extends StatelessWidget {
-  const ShowSelectedItems({required this.width, Key? key}) : super(key: key);
+class ShowItems extends StatelessWidget {
+  const ShowItems({required this.width, Key? key}) : super(key: key);
   final double width;
 
   @override
   Widget build(BuildContext context) {
-      List<Item> selectedItems = [];
-      for (var e in items) {
-        if (e.selected) {
-          selectedItems.add(e);
-        }
-      }
+
       return ListView.builder(
         padding: const EdgeInsets.all(10),
-        itemCount: selectedItems.length,
+        itemCount: items.length,
         itemBuilder: (context, index) {
           return Column(children: [
             const SizedBox(height: 10),
               SizedBox(width: width * 0.28),
-              Text(selectedItems[index].toString(), style: const TextStyle(fontSize: 18)),
+              Text(items[index].toString(), style: const TextStyle(fontSize: 18)),
               const SizedBox(height: 10),
             // get image from url stored in Item image field
-            Image.network(selectedItems[index].image,
+            Image.network(items[index].image,
                 height: width * 0.3),
             const SizedBox(height: 10),
           ]);
