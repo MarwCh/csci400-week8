@@ -20,7 +20,7 @@ class _HomeState extends State<Home> {
     return Scaffold(
         appBar: AppBar(
           // displays the total price
-          title: Text('Menu'),
+          title: const Text('Menu'),
           centerTitle: true,
         ),
         // check if we need to display selected items or menu
