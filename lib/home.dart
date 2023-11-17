@@ -30,9 +30,6 @@ class _HomeState extends State<Home> {
                 message: 'Reset selection',
                 child: IconButton(
                   onPressed: () {
-                    for (var e in items) {
-                      e.selected = false;
-                    }
                     setState(() {
                       _sum = 0;
                       for (var e in items) {
