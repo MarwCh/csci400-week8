@@ -3,17 +3,12 @@ import 'package:flutter/material.dart';
 class Item {
   final String _name;
   final double _price;
-  bool _selected = false; // determines if an item is selected from the menu
-  final String _image; // holds image url
 
-  Item(this._name, this._price, this._image);
+  Item(this._name, this._price);
 
   // getters and setters
   String get name => _name;
   double get price => _price;
-  bool get selected => _selected;
-  String get image => _image;
-  set selected(bool e) => _selected = e;
 
   // item description is displayed in the ListView
   @override
@@ -28,14 +23,10 @@ class Item {
 
 // list of items, used to populate ListView
 List<Item> items = [
-  Item('Burger', 7,
-      "https://plus.unsplash.com/premium_photo-1667682209935-b6c87cced668?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8YnVyZ2VyfGVufDB8fDB8fHww"),
-  Item('Pizza', 10,
-      "https://images.unsplash.com/photo-1513104890138-7c749659a591?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"),
-  Item('Salad', 6,
-      "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"),
-  Item('Fresh Juice', 5,
-      "https://images.unsplash.com/photo-1579954115545-a95591f28bfc?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"),
+  Item('Burger', 7),
+  Item('Pizza', 10),
+  Item('Salad', 6),
+  Item('Fresh Juice', 5),
 ];
 
 
@@ -54,11 +45,7 @@ class ShowItems extends StatelessWidget {
             const SizedBox(height: 10),
               SizedBox(width: width * 0.28),
               Text(items[index].toString(), style: const TextStyle(fontSize: 18)),
-              const SizedBox(height: 10),
-            // get image from url stored in Item image field
-            Image.network(items[index].image,
-                height: width * 0.3),
-            const SizedBox(height: 10),
+              const SizedBox(height: 10)
           ]);
         },
       );
