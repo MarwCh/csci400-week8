@@ -61,7 +61,7 @@ class _HomeState extends State<Home> {
         ),
         // check if we need to display selected items or menu
         // it depends on the _showSelected field
-        body: _showSelected && _sum != 0 ? ShowSelectedItems(width: screenWidth) :
+        body: _showSelected ? ShowSelectedItems(width: screenWidth) :
         ListView.builder(
                     itemCount: items.length,
                     itemBuilder: (context, index) {
