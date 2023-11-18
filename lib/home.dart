@@ -47,9 +47,11 @@ class _HomeState extends State<Home> {
                 message: 'Show/Hide Selected Items',
                 child: IconButton(
                   onPressed: () {
-                    setState(() {
-                      _showSelected = !_showSelected;
-                    });
+                    if (_sum != 0) {
+                      setState(() {
+                        _showSelected = !_showSelected;
+                      });
+                    }
                   },
                   icon: const Icon(
                     Icons.shopping_cart_checkout,
