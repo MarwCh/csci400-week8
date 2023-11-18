@@ -1,6 +1,6 @@
 /*
-program to display retautant menu
-allows user to seelct items and then computes to price
+program to display restaurant menu
+allows user to select items and then computes total price
 demonstrates the use of:
 ListView
 IconButton
